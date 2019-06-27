@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introducción a HTML5, CSS3 y JavaScript</title>
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300,500,600' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Custom Theme -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/mrm.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script>
+		localStorage.setItem("LocalStorage", 'Esto es localStorage');
+		document.cookie = "username=John Doe";
+		sessionStorage.setItem("SessionStorage", "Valor del objeto");
+
+	</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h1>Introducción</h1>
+						<h2>HTML, CSS y JavaScript</h2>
+						<p>&nbsp;</p>
+						<p>
+							<small>Por <a href="http://echotopia.com.ar">Milagros Pérez</a> / <a href="http://twitter.com/harleshinn">@harleshinn</a></small>
+						</p>
+				</section>
+				<section>
+					<section>
+							<h2>¿Qué es HTML?</h2>
+							<img src="images/slides/html-5-logo.png" alt="">
+							<p>Es la capa de <strong>estructura</strong> del contenido</p>
+							<aside class="notes">
+								<ul>
+									<li>lenguaje declarativo de marcas</li>
+									<li>declarativo: define estructura y atributos</li>
+									<li>no es un lenguaje de programación</li>
+								</ul>
+							</aside>
+					</section>
+					<section>
+						<h2>Padres de la Web</h2>
+						<ul>
+							<li class="fragment">Tim Berners-Lee (HTML Spec) - @timberners_lee</li>
+							<li class="fragment">Håkon Wium Lie y Bert Bos (CSS Spec) - @wiumlie </li>
+							<li class="fragment">Brendan Eich (JavaScript nightmares) - @BrendanEich</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Berners-Lee: ingeniero inglés, director de w3c, fundador de web foundation busca que el acceso a la web sea abierto y un derecho humano básico e igualdad digital</li>
+								<li>Wium Lie: Pionero web Noruego, Jefe de tecnología de Opera, creó la primer propuesta de css</li>
+								<li>Bert Boss: </li>
+								<li>Brendan Eich: </li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h1>Historia <br> de la Web</h1>
+					</section>
+					<section class="timeline" data-background="images/slides/timeline-html.jpg" data-background-transition="zoom">
+						<!-- <img src="images/slides/timeline-html.jpg" alt="">
+						<p><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">Primer Web online</a></p> -->
+						<aside class="notes">
+							<ul>
+								<li>HTML parte de SGML que ya era un estándar</li>
+								<li>la versión inicial de html tenía unos pocos elementos, p, ul, ol, h1 a h6 y a con href, que fue la invención de Tim</li>
+								<li>en la convención de 1993 se buscó crear un estándar de HTML para mejorar la interoperabilidad, es decir que funcione bien en todos lados</li>
+								<li>la internacionalización fue para permitir otros tipos de charsets dentro de html</li>
+								<li>en 2004 se forma el WHATWG que busca acelerar la implementación del estandar</li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>World Wide Web Consortium (w3c)</h2>
+						<p>Fundada por Tim Berners-Lee</p>
+						<div class="row">
+							<div class="col-2">
+								<img src="images/slides/w3c.png" alt="">
+							</div>
+							<div class="col-2">
+								<p>Otros estándares que propone:</p>
+								<ul>
+									<li>CSS</li>
+									<li>DOM</li>
+									<li>WAI-ARIA</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section class="standard">
+						<h2>WHATWG</h2>
+						<div class="row">
+							<div class="col-2">
+								<p>
+									Fundada por 3 vendors de browsers
+									<ul>
+										<li>Apple</li>
+										<li>Opera</li>
+										<li>Mozilla</li>
+									</ul>
+								</p>
+							</div>
+							<div class="col-2">
+								<img src="images/slides/whatwg.png" alt="">
+							</div>
+						</div>
+					</section>
+					<section>
+						<h1>HTML</h1>
+						<ul>
+							<li class="fragment">Hyper Text Markup Language</li>
+							<li class="fragment">Es un lenguaje de marcas</li>
+							<li class="fragment">W3C y WHATWG definen las especificaciones</li>
+							<li class="fragment">Se lo conoce como "Living Standard" o "W3C Recommendation"</li>
+							<li class="fragment">Agrupa: DOM, XHTML, APIs</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Working Draft > Candidate Recommendation > Proposed Recommendation</li>
+								<li>Para alcanzar el status de recomendación tiene que haber sido testeado 100%</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Validación de Código</h2>
+						<img src="images/slides/validator-service.jpg" alt="">
+						<p><a href="https://validator.w3.org/"><strong>https://validator.w3.org/</strong></a></p>
+					</section>
+				</section>
+
+				<!-- Herramientas navegador -->
+				<section class="frontend-tooling">
+					<section>
+						<h1>Frontend Tools</h1>
+						<p>Conociendo las herramientas de desarrollador</p>
+					</section>
+					<section>
+						<h2>Code Editor</h2>
+					</section>
+					<section data-background="images/slides/code-editor.jpg" data-background-transition="zoom" data-background-size="contain">
+
+					</section>
+					<section>
+						<h2>Google Developer Tools</h2>
+						<h3>F12</h3>
+					</section>
+					<section data-background="images/slides/chrome-developer-tools.jpg" data-background-transition="zoom">
+					</section>
+					<section data-background="images/slides/element-state.jpg" data-background-transition="zoom">
+					</section>
+					<section data-background="images/slides/chrome-developer-tools-js-console.jpg" data-background-transition="zoom">
+					</section>
+					<section data-background="images/slides/audits.jpg" data-background-transition="zoom">
+					</section>
+					<section>
+						<h2>Mozilla Developer Tools</h2>
+						<h3>F12</h3>
+					</section>
+					<section data-background="images/slides/firefox-developer-tools.jpg" data-background-transition="zoom"></section>
+					<section>
+						<h2>Internet Explorer Developer Tools</h2>
+						<h3>F12</h3>
+					</section>
+					<section data-background="images/slides/internet-explorer-developer-tools.jpg" data-background-transition="zoom"></section>
+				</section>
+
+				<!-- HTML -->				
+				<section>
+					<section>
+							<h1>Sintaxis</h1>
+							<p>Estructura de una página HTML</p>
+					</section>
+					<section>
+						<h2>Introducción al DOM</h2>
+						<img src="images/slides/dom-code.png" alt="">
+						<aside class="notes">
+							Document object model: es la estructura lógica del documento y una forma estandarizada de interactuar con el mismo mediante otros lenguajes de programación o estilos.
+							ej: javascript : var paragraphs = document.getElementsByTagName("P");
+							<ul>
+								<li>propiedades</li>
+								<li>métodos</li>
+								<li>eventos</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+							<h2>DOM Node Tree</h2>
+							<img src="images/slides/dom.png" alt="">
+					</section>						
+					<section data-background="images/slides/code-doctype.png" data-background-size="contain">
+						<div class="top">
+							<h1>Doctype</h1>
+							<p>¿Qué es? ¿para qué sirve?</p>
+						</div>
+						<aside class="notes">
+							Sirve para indicarle al browser cómo debe interpretar el código para renderizarlo en la pantalla.
+							Hoy en día se utiliza sólo un doctype, ya que en versiones anteriores estaba muy fragmentado
+						</aside>
+					</section>
+					<section data-background="images/slides/code-html.png" data-background-size="contain">
+						<h1 class="top">HTML</h1>
+					</section>
+					<section data-background="images/slides/code-meta-tag.png" data-background-size="contain">
+							<h1 class="top">Head & Meta</h1>
+					</section>
+					<section>
+						<pre><code><meta name="viewport" content="width=device-width, initial-scale=1"></code></pre>
+					</section>
+					<section data-background="images/slides/code-body.png" data-background-size="contain">
+							<h1 class="top">Body</h1>
+					</section>
+				</section>
+
+				<section>
+						<section>
+							<h1>Semántica HTML5</h1>
+							<p>Significado de una página HTML</p>
+						</section>
+						<section>
+							<img src="images/slides/html5-elements.png" alt="">
+						</section>
+						<section>
+								<p>
+									Se introdujo con la intención de darle un contexto 
+									más representativo a los contenidos de un sitio o aplicación web.
+								</p>
+						</section>
+						<section>
+							<p>
+								No es una cuestión caprichosa, ya que una semántica correcta y descriptiva mejora: <strong>ACCESIBILIDAD</strong>, <strong>BÚSQUEDAS</strong>, <strong>INTERNACIONALIZACIÓN</strong> e <strong>INTEROPERABILIDAD</strong>.
+							</p>
+							<aside class="notes">
+								<p>organizado el contenido de forma semántica, utilizando atributos para mejorar la accesibilidad de formularios, imagen, video sobre todo para gente con capacidades diferentes.</p> 
+							</aside>
+						</section>
+						<section>
+							<h2>Content Models</h2>
+							<img src="images/slides/content-models.png" alt="">
+							<aside class="notes">
+								Flow: a, article, button, div, fieldset, figure, section, casi todos los elementos
+								Sectioning: delimitan el scope de títulos y footers
+								Heading: h1 al h6, definen títulos de las secciones
+								phrasing: contenido 
+								embedded: imagen, video, audio, iframes
+								interactive: contenido específicamente hecho para interactuar con el usuario, a, audio, video, button
+							</aside>
+						</section>
+
+
+						<section>
+							<h2>HTML5</h2>
+							<ul>
+								<li class="fragment">Elementos semánticos</li>
+								<li class="fragment">Atributos</li>
+								<li class="fragment">Custom Data</li>
+								<li class="fragment">Microformatos</li>
+								<li class="fragment">RWD</li>
+								<li class="fragment">APIs</li>
+							</ul>
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<h1>Elementos Semánticos</h1>
+						</section>
+						<section>
+							<h2>Header</h2>
+							<pre><code>
+<header class="page-header">
+  <h1>Cute Puppies Express!</h1>
+</header>
+							</code></pre>
+							<aside class="notes">
+								Aunque típicamente se utiliza para definir los headers y navegaciones de un sitio, puede contener cualquier tipo de encabezados en cualquier sección de la página
+							</aside>
+						</section>
+
+						<section>
+							<h2>Nav</h2>
+<pre><code>
+<nav class="crumbs">
+ <ol>
+  <li class="crumb"><a href="cupcakes">Cupcakes</a></li>
+  <li class="crumb"><a href="cakes">Cakes</a></li>
+  <li class="crumb">Macarons</li>
+ </ol>
+</nav>
+</code></pre>
+						<aside class="notes">puede haber mas de un nav en una página, se usan para delimitar bloques de links internos o externos</aside>
+						</section>
+
+						<section>
+							<h2>Section</h2>
+<pre><code>
+ <section>
+  <p>Content</p>
+ </section>
+</code></pre>
+						</section>
+						<section>
+								<h2>Article</h2>
+<pre><code>
+ <article>
+  <h2>Article Title</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quidem similique ex voluptate fugiat eum placeat, 
+    sunt eveniet 
+    labore odit beatae iure, aut, illo sit error corrupti 
+    aperiam ducimus. Magni, id.
+  </p>
+ </article>
+</code></pre>
+							</section>
+							<section>
+								<h2>Figure</h2>
+<pre><code>
+<figure>
+  <video src="example.webm" controls></video>
+  <figcaption>Example</figcaption>
+</figure>
+</code></pre>
+							</section>
+							<section>
+								<h2>Picture</h2>
+<pre><code>
+ <picture>
+  <source srcset="/uploads/100-marie-lloyd.webp" type="image/webp">
+  <source srcset="/uploads/100-marie-lloyd.jxr" type="image/vnd.ms-photo">
+  <img src="/uploads/100-marie-lloyd.jpg" alt="A singer" width="100" height="150">
+ </picture>
+</code></pre>
+							</section>
+							<section>
+								<h2>Footer</h2>
+<pre><code>
+		<footer><a href="../">Back to index...</a></footer>
+</code></pre>
+							</section>
+					</section>
+					<section>
+							<h2>Custom Data</h2>
+							<pre><code>
+<a data-nav="following" data-element-term="following_stats" href="/following">
+	<strong>303</strong> Following
+</a>
+						</code></pre>
+						<img src="images/slides/twitter.jpg" alt="">
+						</section>
+				<section>
+					<h2>Attributes</h2>
+					<ul>
+						<li class="fragment">tel</li>
+						<li class="fragment">placeholder</li>
+						<li class="fragment">email</li>
+						<li class="fragment">date</li>
+						<li class="fragment">number</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Introducción a la Accesibilidad (A11Y)</h2>
+						<p>Permitir a la mayor cantidad de personas utilizar los websites inclusive cuando las capacidades de esas personas están limitadas de alguna manera.</p>
+						<aside class="notes">
+							<ul>
+								<li>utilizar la semántica correcta para garantizar funcionalidades de los elementos correctos, ej, usar un button en vez de un div</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Tips de accesibilidad</h2>
+						<ul>
+							<li class="fragment">Navegable con teclado</li>
+							<li class="fragment">Alternativa textual para imágenes, audio y video</li>
+							<li class="fragment">Cuidar el contraste de colores</li>
+							<li class="fragment">Utilizar HMTL semántico</li>
+							<li class="fragment">Formularios accesibles</li>
+							<li class="fragment">Utilizar tablas sólo para mostrar datos tabulares</li>
+						</ul>
+					</section>
+
+				</section>
+				
+				
+
+				<section>
+					<h3>Optimización del HTML</h3>
+					<ul>
+						<li class="fragment"><strong>Doctype</strong>: No puede faltar</li>
+						<li class="fragment"><strong>Validación de código</strong>: Siempre</li>
+						<li class="fragment"><strong>Respetar la semántica</strong>: Parseo eficiente</li>
+						<li class="fragment"><strong>Naming Conventions</strong>: Qué es y que hace</li>
+						<li class="fragment"><strong>Formularios</strong>: Utilizar atributos correctos</li>
+						<li class="fragment"><strong>Indentación</strong>: Legibilidad y mantenimiento</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>¡Muchas Gracias!</h1>
+					<h2>¡Nos vemos la próxima!</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

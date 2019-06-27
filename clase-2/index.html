@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introducción a HTML5, CSS3 y JavaScript</title>
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300,500,600' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Custom Theme -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/mrm.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script>
+		localStorage.setItem("LocalStorage", 'Esto es localStorage');
+		document.cookie = "username=John Doe";
+		sessionStorage.setItem("SessionStorage", "Valor del objeto");
+
+	</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h1>Introducción</h1>
+						<h2>HTML, CSS y JavaScript</h2>
+						<p>&nbsp;</p>
+						<p>
+							<small>Por <a href="http://echotopia.com.ar">Milagros Pérez</a> / <a href="http://twitter.com/harleshinn">@harleshinn</a></small>
+						</p>
+				</section>				
+
+				<!-- CSS -->
+				<section>
+					<h1>CSS3</h1>
+					<p>Cascading Style Sheets</p>
+					<img src="images/slides/css-3-logo.png" alt="">
+					<p>http://www.csszengarden.com/</p>
+					<p>Es la capa de <strong>presentación</strong> del contenido</p>
+				</section>
+				<section>
+					<img src="images/slides/css-is-awesome.png" alt="">
+				</section>
+				<section>
+					<h3>Historia de CSS</h3>
+					<img src="images/slides/historia-css.png" alt="">
+					<aside class="notes">
+							<ul>
+								<li>Las primeras implementaciones de CSS se hicieron en lo que luego sería Netscape > Mozilla</li>
+								<li>La primer presentación de CSS se hizo en 1994 y no fué aprobada como parte del standard hasta 1996 como CSS1</li>
+								<li>Antes de css habia tags de presentación que no se podían compartir entre páginas, css hizo que varios documentos enlazados compartan estilos</li>
+								<li>En 1998 salió la versión CSS2</li>
+								<li>El primer browser comercial en soportar css fué IE3</li>
+								<li>CSS2 permitía usar webfonts, algunos proveedores te dejan usar fonts gratis desde sus servidores (google fonts) pero reunen estadísticas de uso de las fonts</li>
+							</ul>
+						</aside>
+				</section>
+					
+				<section>
+					<h1>Módulos</h1>
+					<img src="images/slides/css-modules.png" alt="">
+				</section>					
+
+				<section>
+					<section>
+						<h1>Cómo Incluir CSS</h1>
+					</section>
+					<section>
+						<h2>Inline</h2>
+						<pre><code><a href="#" style="color: red; text-decoration: none;"></a></code></pre>
+					</section>
+					<section>
+						<h2>Style</h2>
+<pre><code>
+<style>
+  .call-to-action { 
+    color: red; 
+    text-decoration: none;
+  }
+</style>
+</code></pre>
+					</section>
+					<section>
+						<h2>Link</h2>
+<pre><code>
+  <link rel="stylesheet" href="styles.css">
+</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Sintaxis</h1>
+					<img src="images/slides/css-rule.png" alt="">
+				</section>
+				<section>
+					<h3>Estilos default del navegador y estilos propios</h3>
+					<div class="row">
+						<div class="col-2">
+							<img src="images/slides/user-agent-styles.jpg" alt="">
+
+						</div>
+						<div class="col-2">
+							<img src="images/slides/user-agent-styles-2.jpg" alt="">
+
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Normalización vs Reset</h1>
+				</section>
+				<section>
+					<img src="images/slides/reset-vs-normalize.png" alt="">
+				</section>
+				<section>
+					<h3>Cross-browsering/devices</h3>
+					<img src="images/slides/browser-engines-2019.png" alt="">
+					<a href="#"><strong>https://caniuse.com/</strong></a>
+					<aside class="notes">
+							<p>While browsing the web, whenever you click on a link or type a URL in your browser, you’re guiding your web browser to make a server request for loading the content that you are seeking and to display it on the browser window. This is done by the use of a Rendering Engine that is responsible for parsing the HTML and CSS code and displaying the parsed content on the screen. As every browser has its own rendering engine, content is not displayed identically across all browsers. As a result, there might be glaring differences in the website’s layout and appearance.</p>
+					</aside>
+				</section>
+				<section>
+					<h2>Cómo aplican el CSS los navegadores</h2>
+					<img src="images/slides/rendering-process.png" alt="">
+				</section>
+				<section>
+					<h2>CSSOM</h2>
+					<div style="background: rgba(255,255,255, .8); height: 60vh;" ><img src="images/slides/cssom.png" alt=""></div>
+				</section>
+				<section>
+					<section>
+						<h2>Selectores </h2>
+						<ul>
+							<li class="fragment">universal</li>
+							<li class="fragment">type</li>
+							<li class="fragment">pseudo-class</li>
+							<li class="fragment">pseudo-element</li>
+							<li class="fragment">class</li>
+							<li class="fragment">id</li>
+							<li class="fragment">attribute</li>
+							<li class="fragment">combinator</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Universal Selector</h2>
+						<pre><code>* { background: pink;}</code></pre>
+					</section>
+					<section>
+						<h2>Type Selector</h2>
+						<pre><code> span { color: blue; } </code></pre>
+					</section>
+					<section>
+						<h2>Pseudo-Class</h2>
+						<pre><code>a:hover { background: #ccc; } </code></pre>
+						<aside class="notes">Target element by state. Ej. pseudo classes: active, hover, checked, focus</aside>
+					</section>
+					<section>
+						<h2>Pseudo-element</h2>
+<pre><code>
+a::after { 
+  content: ''; 
+  width: 45px; 
+  height: 45px; 
+  backgorund: yellow; 
+} </code></pre>
+					<aside class="notes">ej pseudo elementos: before, after, placeholder, first-letter, first-line</aside>
+					</section>
+					<section>
+						<h2>Class</h2>
+						<pre><code>.box { color:  red;}</code></pre>
+					</section>
+					<section>
+						<h2>ID</h2>
+						<pre><code>#box { background: rebeccapurple; }</code></pre>
+					</section>
+					<section>
+						<h2>Attribute</h2>
+						<pre><code>input[type="email"] { border: 2px solid pink;}</code></pre>
+					</section>
+					<section>
+						<h2>Combinators</h2>
+						<p>Adjacent Sibling</p>
+						<pre><code>img + p { color: red; }</code></pre>
+						<p>General Sibling</p>
+						<pre><code>img ~ p { color: pink; }</code></pre>
+					</section>
+					<section>
+						<h2>Combinators</h2>
+						<p>Child</p>
+						<pre><code>ul > li { display: inline-block; }</code></pre>
+						<p>Descendant</p>
+						<pre><code>ul li { color: pink; }</code></pre>
+						<aside class="notes">La diferencia entre child y descendant es que child es hijo directo y descendant puede estar en cualquier nivel</aside>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h2>Cascada, herencia y especificidad</h2>
+					</section>
+					<section>
+						<h2>Cascada</h2>
+						<img src="images/slides/css-cascade.gif" alt="">
+					</section>
+					<section>
+						<h2>Herencia</h2>
+						<img src="images/slides/inheritance.png" alt="">
+					</section>
+					<section>
+						<h2>Especificidad</h2>
+						<img src="images/slides/cssspecificity-calc-5.png" alt="">
+					</section>
+					
+				</section>
+
+				<section>
+					<h2>Box model</h2>
+					<img src="images/slides/box-areas1.png" alt="">
+					<aside class="notes">outline: no agrega dimensiones al modelo de caja</aside>
+				</section>
+				<section>
+					<h2>Box Model Types</h2>
+					<img src="images/slides/box-model-types.png" alt="">
+				</section>
+				<section>
+					<h2>CSS Layouts</h2>
+					<ul>
+						<li class="fragment">Normal Flow</li>
+						<li class="fragment">Display</li>
+						<li class="fragment">Flex</li>
+						<li class="fragment">Grid</li>
+						<li class="fragment">Floats</li>
+						<li class="fragment">Positioning</li>
+						<li class="fragment">Table</li>
+						<li class="fragment">Multi Column</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+							<h2>Responsive Web Design</h2>
+							<blockquote>...You put water in a cup, it becomes the cup; 
+									You put water into a bottle, it becomes the bottle; 
+									You put it in a teapot, it becomes the teapot. 
+									Now water can flow or it can crash. 
+									Be water, my friend</blockquote>
+									<cite>Bruce Lee</cite>
+					</section>
+					<section>
+						<h2>Elementos RWD</h2>
+						<ul>
+							<li class="fragment">Definir breakpoints</li>
+							<li class="fragment">Jerarquizar contenido</li>
+							<li class="fragment">Definir grilla</li>
+							<li class="fragment">Control de Viewport</li>
+							<li class="fragment">Media Queries</li>
+							<li class="fragment">Maquetación líquida</li>
+							<li class="fragment">Imágenes adaptables</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Control de Viewport</h2>
+						<pre><code><meta name="viewport" content="width=device-width, initial-scale=1">
+						</code></pre>
+					</section>
+					<section>
+						<img src="images/slides/breakpoints.jpg" alt="">
+					</section>
+					<section>
+						<h2>Media Queries</h2>
+<pre><code>
+  @media (min-width: 30em) and (orientation: landscape) { ... }
+</code></pre>
+					</section>
+					<section>
+						<img src="images/slides/liquid.jpg" alt="">
+					</section>
+					<section>
+						<h2>Responsive images</h2>
+						<pre><code>img { max-width: 100%;}</code></pre>
+						<h5>Otras soluciones:</h5>
+						<ul>
+							<li class="fragment">picture</li>
+							<li class="fragment">srcset y size atributes</li>
+						</ul>
+					</section>
+					
+				</section>
+				<section>
+					<h2>Preprocesadores</h2>
+					<ul>
+						<li class="fragment">Sass</li>
+						<li class="fragment">Less</li>
+						<li class="fragment">PostCSS</li>
+						<li class="fragment">Stylus</li>
+					</ul>
+				</section>
+
+				<!-- JavaScript -->
+				<section>
+					<section>
+						<h1>Historia de JS</h1>
+						<div style="background: white;"><img src="images/slides/javascript-timeline.png" alt=""></div>
+					</section>
+					<section>
+						<h2>¿Para qué se usa?</h2>
+
+						<aside class="notes">
+								is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.
+						</aside>
+					</section>
+					<section>
+						<img src="images/slides/babel-logo.png" alt="">
+					</section>
+				</section>
+					
+					<section>
+							<section>
+									<h2>Incluyendo JS</h2>
+							</section>
+							<section>
+								<h2>Script Tag</h2>
+	<pre><code>
+	<script>
+	
+		// JavaScript goes here
+	
+	</script>
+	</code></pre>
+							</section>
+	
+							<section>
+								<h2>Referencia Externa</h2>
+									<pre><code><script src="scripts/main.js"></script></code></pre>
+							</section>
+							
+							<section>
+								<h2>Inline</h2>
+	<pre><code><a href="#" onclick="alert('Hello World!');" ></a></code></pre>
+							</section>
+						</section>
+					<section>
+						<section>
+							<h2>Debbuging JS</h2>
+						</section>
+						<section data-background="images/slides/debugging-js-1.png" data-background-transition="zoom"></section>
+						<section data-background="images/slides/debugging-js-2.png" data-background-transition="zoom"></section>
+					</section>
+					<section>
+						<h1>JSON</h1>
+						<p>JavaScript Object Notation</p>
+<pre><code>
+{"menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", "onclick": "OpenDoc()"},
+      {"value": "Close", "onclick": "CloseDoc()"}
+    ]
+  }
+}}	
+</code></pre>
+					</section>
+					<section>
+						<h2>AJAX</h2>
+						<p>Asynchronous JavaScript and XML</p>
+						<img src="images/slides/ajax-call.png" alt="">
+						<aside class="notes">document . readyState
+								Returns "loading" while the Document is loading, "interactive" once it is finished parsing but still loading sub-resources, and "complete" once it has loaded.
+								The readystatechange event fires on the Document object when this value changes.</aside>
+					</section>
+				</section>
+					<section>
+						<h2>PWA</h2>
+						<p>Progressive Web Apps</p>
+						<img src="images/slides/feature-detection.png" alt="">
+					</section>
+				<section>
+					<h2>En definitiva...</h2>
+					<img src="images/slides/html-javascript-css-explained.png" alt="">
+				</section>
+				
+
+				</section>
+				<section>
+					<h1>¡Muchas Gracias!</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
